@@ -22,8 +22,8 @@ export const Sidebar = ({
 }: SidebarProps) => {
 
     const activeItems = {
-        uniqueId1: true,
-        uniqueId2: true,
+        uniqueId1: false,
+        uniqueId2: false,
     };
 
     const navOptions: NavOption[] = [
@@ -52,16 +52,24 @@ export const Sidebar = ({
 
     const onExpand = (id: string) => {
         setExpanded((curr) => ({
-        ...curr,
-        [id]: !expanded[id],
+            ...curr,
+            [id]: !expanded[id],
         }));
     };
 
 
-    // if(!isLoadedItem, || !isLoadedItemList || userItems.isLoading){
-    //     return(
+    // if (!isLoadedItem || !isLoadedItemList || userItems.isLoading) {
+    //     return (
     //         <>
-    //             <Skeleton />
+    //             <div className='flex items-center justify-between mb-2'>
+    //                 <Skeleton className='h-10 w-[50%]'/>
+    //                 <Skeleton className='h-10 w-10'/>
+    //             </div>
+    //             <div className='space-y-2'>
+    //                 <NavItem.Skeleton />
+    //                 <NavItem.Skeleton />
+    //                 <NavItem.Skeleton />
+    //             </div>
     //         </>
     //     );
     // }
@@ -86,7 +94,7 @@ export const Sidebar = ({
                     </Link>
                 </Button>
             </div>
-            
+
             <Accordion
                 type="multiple"
                 defaultValue={defaultAccordionValue}

@@ -2,7 +2,11 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className='text-3xl'>Home!</div>
+    <div>
+      <form>
+      <h1 className='font-medium text-xl'>Work spaces</h1>
+      </form>
+    </div>
   )
 }
 

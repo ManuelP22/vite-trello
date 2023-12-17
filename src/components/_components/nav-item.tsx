@@ -9,6 +9,7 @@ import {
 } from "lucide-react"
 import { useLocation, useNavigate } from 'react-router';
 import { Button } from '../ui/button';
+import { Skeleton } from '../ui/skeleton';
 
 export type NavOption = {
     id: string;
@@ -69,7 +70,7 @@ export const NavItem = ({
         onClick={() => onExpand(options.id)}
         className={cn(
             "flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline",
-            isActive && isExpanded && "bg-emerald-500/10 text-emerald-700"
+            isActive && !isExpanded && "bg-emerald-500/10 text-emerald-700"
         )}
         >
             <div className="flex items-center gap-x-2">
@@ -103,5 +104,14 @@ export const NavItem = ({
             ))}
         </AccordionContent>
     </AccordionItem>
-  )
+  );
+};
+
+NavItem.Skeleton = function SkeletonNavItem() {
+    <div className="flex items-center gap-x-2">
+        <div className='w-10 h-10 relative shrink-0'>
+            <Skeleton className="h-full w-full absolute" />
+        </div>
+        <Skeleton className='h-10 w-full' />
+    </div>
 }
