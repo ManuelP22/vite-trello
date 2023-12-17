@@ -1,0 +1,37 @@
+import { Medal } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { Link } from 'react-router-dom'
+import { cn } from '@/lib/utils';
+
+
+const Presentation = () => {
+  return (
+    <div className='flex items-center justify-center flex-col'>
+        <div className={cn('flex items-center justify-center flex-col')}>
+            <div className='mb-4 flex items-center border shadow-sm p-4 bg-green-100 text-green-700 rounded-full uppercase'>
+                <Medal className='h-6 w-6 mr-2'/>
+                No 1 files management
+            </div>
+                <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6">
+                    Optimiza tu Negocio con FC Administrador 
+                </h1>
+            <div className='text-3xl md:text-6xl bg-gradient-to-r from-green-600 
+            to-teal-600 text-white px-4 p-2 rounded-md pb-4 w-fit'>
+                Trabajo hacia el futuro.
+            </div>
+        </div>
+        <div className='text-sm md:text-xl text-neutral-400 mt-4 mx-w-xs md:max-w-2xl text-center mx-auto'>
+            Colabora, maneje sus proyectos, y eleve su productividad.
+            Mantenga su Equipo y oficina al dia de una manera unica con FC Administrator
+        </div>
+        <Button className='mt-6' size='lg' asChild>
+            <Link to="/home">
+                FC Administrator
+            </Link>
+        </Button>
+    </div>
+  )
+}
+
+export default Presentation
